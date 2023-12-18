@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-		<title>First Encounter</title>
-	</head>
-	<body>
-		<h1 class="PageTitle">Welcome to XSS Lab</h1>
-		<div id="contentBox">
-			<h3>Instructions</h3>
-			<ul>
-				<li>Navigate to websites containing XSS challenges: firstEncounter.html, secondEncounter.html....</li>
-				<li>Try Injecting an XSS Payload</li>
-				<li>The GET Request Paramter is 'param'</li>
-				<li>Happy Hacking :)</li>
-			</ul>
-		</div>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Home</title>
+  </head>
+  <body>
+    <h1 class="PageTitle">Welcome to XSS Lab</h1>
+    <div id="contentBox">
+      <h3>Instructions</h3>
+      <ul>
+        <li>
+          Navigate to websites containing XSS challenges:
+          <a href="/firstEncounter">firstEncounter</a>,
+          <a href="/secondEncounter">secondEncounter</a>....
+        </li>
+        <li>Try Injecting an XSS Payload</li>
+        <li>The GET Request Paramter is 'param'</li>
+        <li>Happy Hacking :)</li>
+      </ul>
+    </div>
+  </body>
 </html>
+
