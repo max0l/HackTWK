@@ -24,7 +24,7 @@
 		</div>
 		<script>
 			let param = new URL(location).searchParams.get('param');
-			content.setAttribut('style', param);
+			content.innerHTML = `<strong title="${param}">${content.innerText}</strong>`
 		</script>
 	</body>
 </html>
