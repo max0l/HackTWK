@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Validate flag</title>
+</head>
+<body>
+<script>
+    function validateFlag() {
+        const flag = document.getElementById('flag').value;
+
+        fetch('/ctf/rest/validate-flag', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                flag: flag
+            })
+        }).then(response => {
+            if (response.status === 200) {
+                alert('Flag is valid!');
+            } else {
+                alert('Flag is invalid!');
+            }
+        });
+    }
+</script>
+
+<a href="/ctf/secret_space">← back</a>
+<h1>Validate flag</h1>
+<p>
+    Enter the flag to validate:
+</p>
+<input id="flag" type="text">
+<button onclick="validateFlag()">validate</button>
+</body>
+</html>

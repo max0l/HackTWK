@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Alex' Webterminal</title>
+</head>
+<body>
+<a href="/ctf/secret_space">← back</a>
+<div
+        id="terminal"
+        style="
+        background: black;
+        color: green;
+        padding: 10px; font-family: monospace;
+      "
+>
+    (print "Welcome to my custom web terminal. Use the 'help' command to list
+    all available commands.")
+    <br/>
+</div>
+<input
+        id="command"
+        type="text"
+        style="width: calc(100% - 10px)"
+        placeholder="Enter command..."
+/>
+<script lang="javascript">
+    const terminal = document.getElementById("terminal");
+    const input = document.getElementById("command");
+    input.addEventListener("keyup", function (event) {
+        if (event.key === "Enter") {
+            const command = input.value.toLowerCase();
+            terminal.innerHTML += "$ " + command + "<br>";
+            fetch("/ctf/rest/cl-terminal", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    command: command,
+                }),
+            })
+                .then((response) => response.text())
+                .then((response) => {
+                    if (command.toLowerCase().startsWith("download")) {
+                        const filename = command.split(" ")[1];
+                        downloadFromPath(response, filename);
+                        return;
+                    }
+                    terminal.innerHTML += response + "<br>";
+                });
+            input.value = "";
+        }
+    });
+
+    function downloadFromPath(link, filename) {
+        const downloadLink = document.createElement("a");
+        downloadLink.href = link;
+        downloadLink.download = filename;
+
+        downloadLink.click();
+    }
+</script>
+</body>
+</html>
