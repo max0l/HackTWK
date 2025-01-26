@@ -8,6 +8,6 @@
     "staticContent": {
       "directory": "public"
     },
-    "logLevel": "WARN"
+    "logLevel": "DEBUG"
   }
 }
