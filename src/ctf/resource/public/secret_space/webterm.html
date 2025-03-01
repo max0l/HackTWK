@@ -6,7 +6,7 @@
     <title>Alex' Webterminal</title>
 </head>
 <body>
-<a href="/ctf/secret_space">← back</a>
+<a href="/secret_space">← back</a>
 <div
         id="terminal"
         style="
@@ -32,7 +32,7 @@
         if (event.key === "Enter") {
             const command = input.value.toLowerCase();
             terminal.innerHTML += "$ " + command + "<br>";
-            fetch("/ctf/rest/cl-terminal", {
+            fetch("/rest/cl-terminal", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

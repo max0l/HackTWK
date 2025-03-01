@@ -40,9 +40,9 @@ public class TerminalResource {
             } else {
                 final String filename = splitted[1];
                 if (filename.equalsIgnoreCase("secret.png")) {
-                    response = "/ctf/secret_space/egarots/secret.png";
+                    response = "/secret_space/egarots/secret.png";
                 } else if (filename.equalsIgnoreCase("archive.txt")) {
-                    response = "/ctf/secret_space/storage/archive.txt";
+                    response = "/secret_space/storage/archive.txt";
                 } else {
                     response = "File not found: " + filename;
                 }

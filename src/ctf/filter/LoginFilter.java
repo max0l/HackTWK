@@ -34,7 +34,7 @@ public class LoginFilter implements Filter {
 
         if (!session.contains("logged-in")) {
             httpContext.getResponse().setCode(ResponseCodes.FOUND);
-            httpContext.getResponse().setHeader("Location", "/ctf/login");
+            httpContext.getResponse().setHeader("Location", "/login");
             return false;
         }
 

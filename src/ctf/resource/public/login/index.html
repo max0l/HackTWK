@@ -9,7 +9,7 @@
     function doLogin() {
         const clPassword = document.getElementById('cl-password').value;
 
-        fetch('/ctf/rest/cl-login', {
+        fetch('/rest/cl-login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -19,14 +19,14 @@
             })
         }).then(response => {
             if (response.status === 200) {
-                window.location.href = '/ctf/secret_space';
+                window.location.href = '/secret_space';
             } else {
                 alert('Invalid password!');
             }
         });
     }
 </script>
-<a href="/ctf/">← back</a>
+<a href="/">← back</a>
 <h1>login</h1>
 <label for="cl-password">paÞword</label>
 <input id="cl-password" type="password">

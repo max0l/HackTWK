@@ -9,7 +9,7 @@
     function validateFlag() {
         const flag = document.getElementById('flag').value;
 
-        fetch('/ctf/rest/validate-flag', {
+        fetch('/rest/validate-flag', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -27,7 +27,7 @@
     }
 </script>
 
-<a href="/ctf/secret_space">← back</a>
+<a href="/secret_space">← back</a>
 <h1>Validate flag</h1>
 <p>
     Enter the flag to validate:
