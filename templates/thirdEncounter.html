@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+		<title>Third Encounter</title>
+	</head>
+	<body>
+		<h1 class="PageTitle">Welcome to the Third Challenge</h1>
+		<div id="contentBox">
+			<h3>Instructions</h3>
+			<ul>
+				<li>Try Injecting an XSS Payload</li>
+				<li>The GET Request Paramter is 'param'</li>
+				<li>Happy Hacking :)</li>
+			</ul>
+			<img src="{{ url_for('static', filename='thirdEncounter.png') }}">
+		</div>
+
+		<div id="contentBox">
+			<h3>Result</h3>
+			<p id="content">Beautiful Content</p>
+		</div>
+		<script>
+			let param = new URL(location).searchParams.get('param');
+			content.innerHTML = `<strong title="${param}">${content.innerText}</strong>`
+		</script>
+	</body>
+</html>
