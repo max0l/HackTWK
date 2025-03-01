@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+		<title>Second Encounter</title>
+	</head>
+	<body>
+		<nav>
+			<div>
+			  <h1>Command Injection</h1>
+			</div>
+			<div>
+			  <ul>
+				<li><a href="/firstEncounter">firstEncounter</a></li>
+				<li><a href="/secondEncounter">secondEncounter</a></li>
+			  </ul>
+			</div>
+		  </nav>
+
+		<section>
+			<h1 class="PageTitle">Welcome to the Second Challenge (Command Blacklisting)</h1>
+			<div id="contentBox">
+				<h1>Source Code</h1>
+				<img src="{{ url_for('static', filename='secondEncounter.png') }}">
+
+				<form id="inputForm" action="{{ url_for('secondEncounter') }}" method="GET">
+					<input type="text" id="param" name="param" placeholder="Try a command injection...">
+					<button type="submit">Submit</button>
+				</form>
+
+				<h3>Result</h3>
+				<p id="content">{{args}}</p>
+			</div>
+		</section>
+	</body>
+</html>

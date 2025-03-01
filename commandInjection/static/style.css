@@ -1,0 +1,140 @@
+/* General Reset */
+body {
+	font-family: 'Courier New', Courier, monospace;
+	background-color: #121212;
+	color: #00ff00;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+  }
+  
+  .PageTitle {
+	font-size: 2.5em;
+	margin-top: 20px;
+	text-shadow: 0 0 10px #00ff00;
+  }
+  
+  #contentBox {
+	width: 60%;
+	margin: 20px auto;
+	padding: 20px;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-radius: 10px;
+	box-shadow: 0 0 15px #00ff00;
+  }
+  
+  h3 {
+	font-size: 1.8em;
+	text-shadow: 0 0 5px #00ff00;
+  }
+  
+  ul {
+	list-style-type: none;
+	padding: 0;
+  }
+  
+  li {
+	font-size: 1.2em;
+	margin: 10px 0;
+  }
+  
+  /* Links Styling */
+  a {
+	color: #00ff00;
+	text-decoration: none;
+	font-weight: bold;
+  }
+  
+  a:hover {
+	text-decoration: underline;
+	color: #33ff33;
+  }
+  
+  /* Navigation Bar */
+  nav {
+	background-color: #000;
+	padding: 15px;
+	box-shadow: 0 0 10px #00ff00;
+  }
+  
+  nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+  }
+  
+  nav ul li {
+	display: inline;
+  }
+  
+  nav ul li a {
+	color: #00ff00;
+	font-size: 1.2em;
+	text-decoration: none;
+	padding: 10px 15px;
+	transition: background 0.3s;
+  }
+  
+  nav ul li a:hover {
+	background-color: #00ff00;
+	color: #000;
+	border-radius: 5px;
+  }
+  
+  /* Form Styling */
+  #inputForm {
+	margin-top: 20px;
+  }
+  
+  label {
+	font-size: 1.2em;
+	display: block;
+	margin-bottom: 10px;
+  }
+  
+  input[type="text"] {
+	background-color: #000;
+	color: #00ff00;
+	border: 1px solid #00ff00;
+	padding: 10px;
+	font-size: 1em;
+	width: 80%;
+	max-width: 300px;
+  }
+  
+  button {
+	background-color: #00ff00;
+	color: #000;
+	border: none;
+	padding: 10px 20px;
+	font-size: 1em;
+	cursor: pointer;
+	margin-top: 10px;
+  }
+  
+  button:hover {
+	background-color: #33ff33;
+  }
+  
+  nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  }
+
+  section {
+	height:100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+  }
+
+  form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
