@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="ctf:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/ctf_jar</output-path>
-    <root id="archive" name="ctf.jar">
-      <element id="module-output" name="ctf" />
-      <element id="extracted-dir" path="$USER_HOME$/dev/customJars/dobby/v1.6/dobby.jar" path-in-jar="/" />
-    </root>
-  </artifact>
-</component>
