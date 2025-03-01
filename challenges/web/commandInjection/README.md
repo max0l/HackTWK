@@ -1,13 +1,13 @@
 # Command Injection Challenge
 
-![Command Injection Challenge](static/firstEncounter.png)
+![Command Injection Challenge](media/landingPage.png)
 
 # Preparation
-First, please install poetry, navigate to the project folder and install the required dependencies using the following commands.
+First, please install poetry, navigate to the project folder (contains `pyproject.toml`) and install the required dependencies using the following commands.
 
 ```bash
 sudo apt install poetry -y
-cd commandInjection && poetry install
+poetry install
 ```
 
 # Starting the Challenge
