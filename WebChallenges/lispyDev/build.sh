@@ -1,7 +1,7 @@
 #!/bin/bash
 
 APPLICATION_JSON="src/ctf/resource/application.json"
-IMAGE_NAME="ctf"
+IMAGE_NAME="ctfWebLisp"
 
 increment_minor_version() {
   local version=$1
