@@ -1,0 +1,17 @@
+# Blockchain Solidity Challenge
+
+# Agenda
+Please verify the following Source Code for Secure Implementation.
+There are two issues present in this Source Code. 
+Can you find them all? You can use the official browser ide [remix](https://remix.ethereum.org/#lang=en&optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.26+commit.8a97fa7a.js). 
+-> Please navigate to the `contracts` Folder and select the `Challenge.sol` file.
+
+![remix](media/remix.png)
+
+## Questions
+- [ ]  Which function is unsafe?
+- [ ]  Which line needs some modification?
+- [ ]  Should them be able to execute?
+
+## Source Code
+![source](media/source.png)

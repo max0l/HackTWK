@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Home</title>
+  </head>
+  <body>    
+    <section>
+      <h1 class="PageTitle">Welcome to the Blockchain Solidity Lab</h1>
+        <div id="contentBox">
+            <h1>Challenge</h1>
+            <p>The following Smart Contract is unsafe. Can you tell why?</p>
+            <img src="media/source.png">
+        </div>
+        <form action="/" method="post">
+            <label for="q1">Question 1: Which function is unsafe?</label><br>
+            <input type="text" id="q1" name="q1" placeholder="**********"><br><br>
+    
+            <label for="q2">Question 2: Which modification can be done to this function? (Add the whole line, without body)</label><br>
+            <input type="text" id="q2" name="q2" placeholder="********* ********** ****** *********"><br><br>
+    
+            <label for="q3">Question 3: Should them be able to execute? (yej/nej)</label><br>
+            <input type="text" id="q3" name="q3" placeholder="***"><br><br>
+    
+            <label for="q4">Question 4: Which recipient should entered? (Considering the second flaw)</label><br>
+            <input type="text" id="q4" name="q4" placeholder="*****"><br><br>
+    
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+  </body>
+</html>
