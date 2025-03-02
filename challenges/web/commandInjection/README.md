@@ -2,18 +2,13 @@
 
 ![Command Injection Challenge](media/landingPage.png)
 
-# Preparation
-First, please install poetry, navigate to the project folder (contains `pyproject.toml`) and install the required dependencies using the following commands.
-
+# Starting the Application (using Docker)
+## Create Docker Image
 ```bash
-sudo apt install poetry -y
-poetry install
+sudo docker build -t commandinjectionlab .
 ```
 
-# Starting the Challenge
-Next, dtart the application using the following command.
-Now navigate to http://localhost:5000
-
+## Starting the Application
 ```bash
-poetry run python main.py
+sudo docker run --rm -it -p 8080:5000 -v ./.env:/commandInjectionLab/.env --name commandinjectionlab-container commandinjectionlab
 ```
