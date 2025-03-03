@@ -1,0 +1,3 @@
+Alex's Joke Archive
+- Why do Lisp programmers love parentheses? Because they make them feel enclosed!
+- If programming languages were superheroes, Lisp would be Doctor Strange. Weird syntax, but powerful magic!

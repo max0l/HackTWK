@@ -1,0 +1,6 @@
+services:
+  lispywebc:
+    build:
+      context: "./Challenges/misc/lispyDev/"
+    ports:
+      - "8000:4000"
