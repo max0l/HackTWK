@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Home</title>
+  </head>
+  <body>  
+    <section>
+      <h1 class="PageTitle">Welcome to the HackTWK Command Injection Lab</h1>
+      <div id="contentBox">
+        <h3>Instructions</h3>
+        <ul>
+          <li>Try Injecting an Command Injection Payload and read flag.txt on the server.</li>
+          <li>Consider <a href="https://portswigger.net/web-security/os-command-injection#injecting-os-commands">this resource</a> for inspiration or guidance</li>
+          <li><a href="{{ url_for('firstEncounter') }}">Challenge</a></li>
+          <li>Happy Hacking :)</li>
+        </ul>
+      </div>
+    </section>
+  </body>
+</html>

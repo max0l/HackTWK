@@ -40,6 +40,7 @@ body {
   
   /* Links Styling */
   a {
+	border: solid 1px #00ff00;
 	color: #00ff00;
 	text-decoration: none;
 	font-weight: bold;

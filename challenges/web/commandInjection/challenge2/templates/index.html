@@ -11,26 +11,14 @@
     <title>Home</title>
   </head>
   <body>
-    <nav>
-      <div>
-        <h1>Command Injection</h1>
-      </div>
-      <div>
-        <ul>
-          <li><a href="{{ url_for('firstEncounter') }}">firstEncounter</a></li>
-          <li><a href=" {{ url_for('secondEncounter') }}">secondEncounter (Command Blacklisting)</a></li>
-        </ul>
-      </div>
-    </nav>
-    
     <section>
-      <h1 class="PageTitle">Welcome to Command Injection Lab</h1>
+      <h1 class="PageTitle">Welcome to the HackTWK Command Injection Lab</h1>
       <div id="contentBox">
         <h3>Instructions</h3>
         <ul>
-          <li>Try Injecting an Command Injection Payload</li>
-          <li>The GET Request Paramter is 'param'</li>
+          <li>Try Injecting an Command Injection Payload and read flag.txt on the server.</li>
           <li>Consider <a href="https://portswigger.net/web-security/os-command-injection#injecting-os-commands">this resource</a> for inspiration or guidance</li>
+          <li><a href=" {{ url_for('secondEncounter') }}">Challenge</a></li>
           <li>Happy Hacking :)</li>
         </ul>
       </div>
