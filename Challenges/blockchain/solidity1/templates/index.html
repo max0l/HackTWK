@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='HackTWK.png') }}">
+    <title>Blockchain Solidity Lab</title>
+</head>
+<body>
+    <h1 class="PageTitle">Welcome to the Blockchain Solidity Lab</h1>
+
+    <div class="main-container">
+        <!-- Code Presentation Section -->
+        <div class="code-container">
+            <h2 class="code-title">Vulnerable Solidity Code</h2>
+            <img src="{{ url_for('static', filename='source.png') }}" alt="Solidity Source Code">
+        </div>
+
+        <!-- Form Section -->
+        <div class="form-container">
+            <h2>Answer the Questions</h2>
+            <form action="/" method="post">
+                {% for q_num, question in [
+                    ('q1', 'Which function is unsafe?'),
+                    ('q2', 'Which modification can be done to this function? (Add the whole line, without body)'),
+                    ('q3', 'Should they be able to execute? (yej/nej)'),
+                    ('q4', 'Which recipient should be entered? (Considering the second flaw)')
+                ] %}
+                    <div class="question-container">
+                        <label for="{{ q_num }}">{{ question }}</label>
+                        <input 
+                            type="text" 
+                            id="{{ q_num }}" 
+                            name="answer" 
+                            placeholder="{{ progress.get(q_num, '**********') }}" 
+                            {% if q_num in progress %} class="answered" disabled {% endif %}
+                        >
+                        <input type="hidden" name="question" value="{{ q_num }}">
+                        {% if q_num in progress %} 
+                            <span class="checkmark">&#10004;</span> 
+                        {% else %}
+                            <button type="submit" class="submit-btn">Submit</button>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </form>
+
+            {% if message %}
+                <p class="message">{{ message }}</p>
+            {% endif %}
+
+            {% if flag %}
+                <h2>Congratulations! Here is your flag:</h2>
+                <p class="flag">{{ flag }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
