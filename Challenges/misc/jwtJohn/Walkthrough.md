@@ -20,4 +20,4 @@ john --format=pkzip --wordlist=/path/to/rockyou.txt hash.txt
 
 This results in the password `glados`.
 
-After extracting the file, the flag (`Hacktwk{THE3_C4K3_15_4_L13}`) is stored in the `flag.txt` file.
+After extracting the file, the flag (`Hacktwk{TH3_C4K3_15_4_L13}`) is stored in the `flag.txt` file.
