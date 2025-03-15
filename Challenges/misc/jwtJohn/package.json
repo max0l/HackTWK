@@ -1,0 +1,18 @@
+{
+  "name": "jwtjohn",
+  "version": "1.0.0",
+  "description": "A simple ctf involving jwt manipulation and zip password cracking",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "compile": "cd src && tsc"
+  },
+  "author": "KlnSdr",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.10",
+    "express": "^4.21.2"
+  }
+}
