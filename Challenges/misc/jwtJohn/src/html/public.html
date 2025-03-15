@@ -3,10 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>grandpa's corner of the internet</title>
     <link rel="stylesheet" href="style.css" />
+
+    <script lang="js">
+      window.addEventListener('load', function() {
+        const vids = [
+          "https://www.youtube.com/embed/XduMjIWkNhY",
+          "https://youtube.com/embed/NL6a0x_L2d8",
+          "https://youtube.com/embed/7vp4ZRF8klo",
+          "https://youtube.com/embed/FJ5D-pxSCK8",
+          "https://youtube.com/embed/8-5yLt1gqIo",
+          "https://youtube.com/embed/lCCuZ1DTaWo",
+        ];
+        document.getElementById("vid").src =
+          vids[Math.floor(Math.random() * vids.length)];
+      });
+    </script>
   </head>
   <body>
-    <h1>public</h1>
+    <h1>grandpa's corner of the internet</h1>
+    <div style="text-align: center">
+      <iframe
+        id="vid"
+        width="750vw"
+        height="750vh"
+        src=""
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </div>
   </body>
 </html>

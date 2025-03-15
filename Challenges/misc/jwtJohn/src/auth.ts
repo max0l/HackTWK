@@ -1,9 +1,10 @@
 import { NextFunction, Request, Response } from "express";
 import { sign, verify } from "jsonwebtoken";
 
-// TODO read key from .env
-const JWT_KEY: string = "super_secret_key";
+const JWT_KEY: string = "baking";
 const JWT_COOKIE_NAME: string = "hacktwk_auth";
+const PUBLIC_USER_NAME: string = "public";
+const ADMIN_USER_NAME: string = "grandpa";
 
 const isAdmin = (req: Request): boolean => {
   const token: string | undefined = req.cookies[JWT_COOKIE_NAME];
@@ -14,7 +15,7 @@ const isAdmin = (req: Request): boolean => {
   try {
     const decoded = verify(token, JWT_KEY);
     // @ts-ignore
-    return decoded["user"] === "admin";
+    return decoded["user"] === ADMIN_USER_NAME;
   } catch (err) {
     return false;
   }
@@ -28,7 +29,7 @@ const setJwtMiddleware = (req: Request, res: Response, next: NextFunction) => {
 };
 
 const initNewToken = (): string => {
-  return sign({ user: "public" }, JWT_KEY);
+  return sign({ user: PUBLIC_USER_NAME }, JWT_KEY);
 };
 
 export { isAdmin, setJwtMiddleware };
