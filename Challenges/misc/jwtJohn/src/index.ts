@@ -16,6 +16,18 @@ app.get("/", (req: Request, res: Response) => {
   });
 });
 
+app.get("/recipe.zip", (req: Request, res: Response) => {
+  if (!isAdmin(req)) {
+    res.status(401);
+    res.send("Unauthorized");
+    return;
+  }
+
+  res.sendFile(`html/recipe.zip`, {
+    root: pathJoin(ROOT_PATH),
+  });
+});
+
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`listening on port ${PORT}...`);
 });

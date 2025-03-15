@@ -1,1 +1,1 @@
-zip --password "hello world" recipe.zip flag.txt
+zip --password "hello world" src/html/recipe.zip flag.txt
