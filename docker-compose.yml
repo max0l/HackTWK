@@ -4,3 +4,9 @@ services:
       context: "./Challenges/misc/lispyDev/"
     ports:
       - "8000:4000"
+  jwt_john:
+    build:
+      context: "./Challenges/misc/jwtJohn/"
+    ports:
+      - "8001:3000"
+
