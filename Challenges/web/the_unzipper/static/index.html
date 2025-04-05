@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Manager</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0 auto; padding: 50px; max-width: 600px; }
+        .button { margin-top: 20px; }
+        .files { margin-top: 20px; }
+        .file { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <h1>File Manager</h1>
+
+    <h2>My files</h2>
+    <div class="files" id="myFiles"></div>
+
+    <input type="file" id="fileUpload" accept=".zip">
+    <button class="button" id="uploadButton">Upload Zip</button>
+    <div id="uploadStatus"></div>
+
+    <input type="text" id="extractionIdInput" placeholder="Enter extraction ID">
+    <button class="button" id="listFilesButton">List Files</button>
+    <div class="files" id="fileList"></div>
+
+    <button class="button" id="reportToAdminButton">Report the files to admin</button>
+    <div id="reportStatus"></div>
+    <script>
+        document.getElementById('uploadButton').onclick = function() {
+            var file = document.getElementById('fileUpload').files[0];
+            var formData = new FormData();
+            formData.append('file', file);
+            fetch('/api/upload', { method: 'POST', body: formData })
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('uploadStatus').innerText = 'File uploaded. Extraction ID: ' + data;
+                });
+        };
+
+        function getFiles(extractionId){
+            fetch('/api/files/' + extractionId)
+                .then(response => response.json())
+                .then(data => {
+                    var fileList = document.getElementById('fileList');
+                    fileList.innerHTML = '';
+                    data.files.forEach(function(file) {
+                        var fileElement = document.createElement('div');
+                        fileElement.className = 'file';
+                        fileElement.innerText = file.name;
+                        var downloadLink = document.createElement('a');
+                        downloadLink.href = '/api/download/' + extractionId + '/' + file.name;
+                        downloadLink.innerText = 'Download';
+                        fileElement.appendChild(downloadLink);
+                        fileList.appendChild(fileElement);
+                    });
+                });
+        }
+
+        document.getElementById('listFilesButton').onclick = function() {
+            var extractionId = document.getElementById('extractionIdInput').value;
+            window.location.hash = extractionId;
+            getFiles(extractionId);
+        };
+
+        document.onreadystatechange = function() {
+            if (document.readyState === 'complete') {
+                var extractionId = window.location.hash.substr(1);
+                if (extractionId) {
+                    document.getElementById('extractionIdInput').value = extractionId;
+                    getFiles(extractionId);
+                }
+                fetch("/api/files")
+                .then(response => response.json())
+                .then(data => {
+                    var fileList = document.getElementById('myFiles');
+                    fileList.innerHTML = '';
+                    data.extractions.forEach(function(file) {
+                        var fileElement = document.createElement('div');
+                        fileElement.className = 'file';
+                        fileElement.innerText = file;
+                        var downloadLink = document.createElement('a');
+                        downloadLink.href = '/#' + file;
+                        downloadLink.innerText = 'Go to files';
+                        downloadLink.onclick = function() {
+                            getFiles(file);
+                        };
+                        fileElement.appendChild(downloadLink);
+                        fileList.appendChild(fileElement);
+                    });
+                });
+            }
+        };
+
+        document.getElementById('reportToAdminButton').onclick = function() {
+            var extractionId = window.location.hash.substr(1);
+            fetch('/api/admin/' + extractionId)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('reportStatus').innerText = 'File reported. Response: ' + data;
+                });
+        };
+    </script>
+</body>
+</html>
