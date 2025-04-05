@@ -1,4 +1,4 @@
-# C is super easy and secure 2
+# C is super easy and secure
 
 First open it with a reversing tool like Binaryninja or Ghidra. This will show the structure of the code.
 
