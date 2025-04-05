@@ -8,5 +8,11 @@ services:
     build:
       context: "./Challenges/misc/jwtJohn/"
     ports:
-      - "8001:3000"
+      - "8001:3000"  
+  my-first-overflow:
+    build:
+      context: "./Challenges/reversing/c-is-easy-and-secure/"
+    ports:
+      - "8002:1337"
+
 
