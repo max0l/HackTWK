@@ -1,0 +1,2 @@
+User-agent: *
+Disallow: /eb7b7aae-cc9c-49fd-8133-211a3e44719e

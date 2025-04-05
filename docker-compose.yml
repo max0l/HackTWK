@@ -9,4 +9,8 @@ services:
       context: "./Challenges/misc/jwtJohn/"
     ports:
       - "8001:3000"
-
+  asimov:
+    build:
+      context: "./Challenges/web/asimov/"
+    ports:
+      - "8005:80"
