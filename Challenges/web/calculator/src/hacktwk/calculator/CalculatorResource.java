@@ -3,7 +3,7 @@ package hacktwk.calculator;
 import dobby.annotations.Get;
 import dobby.files.StaticFile;
 import dobby.io.HttpContext;
-import hacktwk.calculator.flag.HackTWK;
+import hacktwk.calculator.ui.CalculatorUI;
 
 public class CalculatorResource {
     @Get("/")
