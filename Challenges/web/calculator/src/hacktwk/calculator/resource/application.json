@@ -1,0 +1,15 @@
+{
+  "application": {
+    "name": "calculator",
+    "version": "1.0"
+  },
+  "dobby": {
+    "staticContent": {
+      "directory": "static"
+    },
+    "port": 1337,
+    "threads": 10,
+    "mode": "http",
+    "logLevel": "DEBUG"
+  }
+}

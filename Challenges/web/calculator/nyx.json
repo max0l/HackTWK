@@ -1,0 +1,25 @@
+{
+  "remoteRepoUrl": "https://repo.klnsdr.com",
+  "project": {
+    "entry": "hacktwk.calculator.Main",
+    "name": "calculator",
+    "version": "1.0",
+    "group": "hacktwk",
+    "dependencies": [
+      {
+        "group": "hacktwk",
+        "name": "dobby",
+        "version": "2.1"
+      },
+      {
+        "group": "common",
+        "name": "html",
+        "version": "1.0"
+      }
+    ]
+  },
+  "compiler": {
+    "version": "21"
+  },
+  "exclude": []
+}
