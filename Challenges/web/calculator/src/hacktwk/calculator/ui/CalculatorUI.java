@@ -21,6 +21,7 @@ public class CalculatorUI {
 
         final Document doc = new Document();
         doc.addStyle("/index.css");
+        doc.addScript("/index.js");
         doc.setTitle("Calculator");
 
         doc.addChild(new Comment("TODO: fix verbose errors"));
@@ -28,8 +29,9 @@ public class CalculatorUI {
         final Div app = new Div();
         app.addStyle("app");
 
-        final Paragraph p = new Paragraph(result);
+        final Paragraph p = new Paragraph((result.isEmpty()) ? "0" : result);
         p.addStyle("result");
+        p.addAttribute("id", "result");
         app.addChild(p);
 
         app.addChild(new KeyPad());
