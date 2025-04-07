@@ -9,4 +9,9 @@ services:
       context: "./Challenges/misc/jwtJohn/"
     ports:
       - "8001:3000"
+  calculator:
+    build:
+      context: "./Challenges/web/calculator/"
+    ports:
+      - "8006:4001"
 
