@@ -7,9 +7,9 @@
     "staticContent": {
       "directory": "static"
     },
-    "port": 1337,
+    "port": 4001,
     "threads": 10,
     "mode": "http",
-    "logLevel": "DEBUG"
+    "logLevel": "WARN"
   }
 }

@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY build/calculator-1.0.jar /app/app.jar
 
-EXPOSE 4000
+EXPOSE 4001
 
 CMD ["app.jar"]
