@@ -1,0 +1,10 @@
+If the name is searched in Cyrillics the following website comes up:
+
+https://myrotvorets.center/criminal/varashev-artem-olehovych/
+
+Flags: 
+
+CTFkom{Krasnoyarsk}
+CTFkom{Красноярск}
+CTFkom{Novokuznetsk}
+CTFkom{Новокузнецк}
