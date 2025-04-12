@@ -1,4 +1,4 @@
-Unhackerman
+# Unhackerman
 
 We are given a file with the name encrypted.png. The intended solution is to look up the file header for the png file format. As per http://www.libpng.org/pub/png/spec/1.2/PNG-Structure.html the first eight bytes of a PNG file always contain these values (decimal) 137 80 78 71 13 10 26 10 if we convert that to HEX we get 89 50 4E 47 0D 0A 1A 0A (Or we just look it up on wikipedia). Now we XOR the png with the known bytes of the header:
 
