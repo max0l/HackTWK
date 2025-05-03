@@ -16,6 +16,16 @@ Can you find them all? You can use the official browser ide [remix](https://remi
 
 -> after you have answered all the questions correctly you will be granted the flag. Well done!
 
+# Start the environment
+## Build the Dockerfile
+```bash
+docker build -t flask-app .
+```
+## Run the Dockerfile
+```bash
+docker run -p 5000:5000 flask-app
+```
+
 ## Source Code
 ```solidity
 // SPDX-License-Identifier: MIT
