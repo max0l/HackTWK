@@ -1,0 +1,19 @@
+{
+  "remoteRepoUrl": "https://repo.klnsdr.com",
+  "project": {
+    "entry": "ctf.Main",
+    "name": "lispyDev",
+    "version": "1.2.1",
+    "group": "hacktwk",
+    "dependencies": [
+      {
+        "group": "dobby",
+        "name": "dobby",
+        "version": "2.0"
+      }
+    ]
+  },
+  "compiler": { "version": "11" },
+  "exclude": []
+}
+
