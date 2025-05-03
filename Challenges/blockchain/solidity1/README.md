@@ -17,4 +17,4 @@ Can you find them all? You can use the official browser ide [remix](https://remi
 -> after you have answered all the questions correctly you will be granted the flag. Well done!
 
 ## Source Code
-![source](media/source.png)
+![source](media/remix.png)
