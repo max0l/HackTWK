@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grandpa's corner of the internet</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <script lang="js">
+      function parseJwt (token) {
+        var base64Url = token.split('.')[1];
+        var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+
+        return JSON.parse(jsonPayload);
+      }
+      function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i <ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
+      window.addEventListener('load', function() {
+        const jwt = getCookie("hacktwk_auth");
+        let username = "public";
+        if (jwt !== "") {
+          const token = parseJwt(jwt);
+          username = token["user"];
+        }
+        document.getElementById("userClaim").innerText = username;
+
+        const vids = [
+          "https://www.youtube.com/embed/XduMjIWkNhY",
+          "https://youtube.com/embed/NL6a0x_L2d8",
+          "https://youtube.com/embed/7vp4ZRF8klo",
+          "https://youtube.com/embed/FJ5D-pxSCK8",
+          "https://youtube.com/embed/8-5yLt1gqIo",
+          "https://youtube.com/embed/lCCuZ1DTaWo",
+        ];
+        document.getElementById("vid").src =
+          vids[Math.floor(Math.random() * vids.length)];
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Hello <i id="userClaim">public</i></h1>
+    <div style="text-align: center">
+      <iframe
+        id="vid"
+        width="750vw"
+        height="750vh"
+        src=""
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </body>
+</html>

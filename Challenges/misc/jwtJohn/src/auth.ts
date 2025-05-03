@@ -1,0 +1,35 @@
+import { NextFunction, Request, Response } from "express";
+import { sign, verify } from "jsonwebtoken";
+
+const JWT_KEY: string = "baking";
+const JWT_COOKIE_NAME: string = "hacktwk_auth";
+const PUBLIC_USER_NAME: string = "public";
+const ADMIN_USER_NAME: string = "grandpa";
+
+const isAdmin = (req: Request): boolean => {
+  const token: string | undefined = req.cookies[JWT_COOKIE_NAME];
+  if (token === undefined) {
+    return false;
+  }
+
+  try {
+    const decoded = verify(token, JWT_KEY);
+    // @ts-ignore
+    return decoded["user"] === ADMIN_USER_NAME;
+  } catch (err) {
+    return false;
+  }
+};
+
+const setJwtMiddleware = (req: Request, res: Response, next: NextFunction) => {
+  if (req.cookies[JWT_COOKIE_NAME] === undefined) {
+    res.cookie(JWT_COOKIE_NAME, initNewToken());
+  }
+  next();
+};
+
+const initNewToken = (): string => {
+  return sign({ user: PUBLIC_USER_NAME }, JWT_KEY);
+};
+
+export { isAdmin, setJwtMiddleware };

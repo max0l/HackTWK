@@ -1,0 +1,13 @@
+{
+  "application": {
+    "name": "ctf",
+    "version": "1.2.1"
+  },
+  "dobby": {
+    "port": 4000,
+    "staticContent": {
+      "directory": "public"
+    },
+    "logLevel": "DEBUG"
+  }
+}
