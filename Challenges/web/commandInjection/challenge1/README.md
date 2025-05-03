@@ -5,12 +5,12 @@
 # Starting the Application (using Docker)
 ## Create Docker Image
 ```bash
-sudo docker build -t commandinjectionlab .
+docker build -t commandinjectionlab .
 ```
 
 ## Starting the Application
 ```bash
-sudo docker run --rm -it -p 8080:5000 -v ./.env:/commandInjectionLab/.env --name commandinjectionlab-container commandinjectionlab
+docker run --rm -it -p 8080:5000 -v ./.env:/commandInjectionLab/.env --name commandinjectionlab-container commandinjectionlab
 ```
 -> The application is noew available at `http://localhost:8080/`
 
