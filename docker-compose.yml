@@ -1,0 +1,11 @@
+services:
+  command_inject_one:
+    build:
+      context: "./Challenges/web/commandInjection/challenge1"
+    ports:
+      - "8007:5000"
+  command_inject_two:
+    build:
+      context: "./Challenges/web/commandInjection/challenge2"
+    ports:
+      - "8008:5000"
