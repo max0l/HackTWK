@@ -12,6 +12,11 @@ However, this application purpose is educational.
 I want to thank pwnfunction for the inspiration.
 
 ## Quickstart
-![Starting](challenge1/media/Starting.png)
+![Starting](media/Starting.png)
 
-![Webpage](challenge1/media/Webpage.png)
+### First Challenge
+```bash
+docker-compose up --build
+```
+
+![Webpage](media/Webpage.png)

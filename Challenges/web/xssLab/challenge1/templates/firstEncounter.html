@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+		<title>First Encounter</title>
+	</head>
+	<body>
+		<h1 class="PageTitle">Welcome to the First Challenge</h1>
+		<div id="contentBox">
+			<h3>Instructions</h3>
+			<ul>
+				<li>Try Injecting an XSS Payload</li>
+				<li>The GET Request Paramter is 'param'</li>
+				<li>Happy Hacking :)</li>
+			</ul>
+			<img src="{{ url_for('static', filename='firstEncounter.png') }}">
+		</div>
+
+		<div id="contentBox">
+			<h3>Result</h3>
+			<p id="content">
+				{% if xss %}
+					{{xss}}
+				{% else %}
+					Beautiful Content
+				{% endif %}
+			</p>
+		</div>
+		<script>
+			var _0x1f6a=["\x73\x63\x72\x69\x70\x74","\x6F\x6E\x65\x72\x72\x6F\x72","\x6F\x6E\x6C\x6F\x61\x64","\x6A\x61\x76\x61\x73\x63\x72\x69\x70\x74\x3A","\x73\x72\x63\x3D","\x69\x66\x72\x61\x6D\x65","\x65\x76\x61\x6C\x28","\x64\x6F\x63\x75\x6D\x65\x2E\x63\x6F\x6F\x6B\x69\x65"];
+		    var _0x32bf = ["\x66\x65\x74\x63\x68","\x2F\x78\x73\x73\x46\x6C\x61\x67", "\x70\x6F\x73\x74"];
+			
+			content.innerHTML = (new URL(location).searchParams.get('param') || 'Beautiful Content');
+		    
+		    var _0x4b7f = _0x1f6a[0];
+		    var _0x2f6d = ['\x73\x63\x72\x69\x70\x74', '\x6F\x6E\x65\x72\x72\x6F\x72', '\x6F\x6E\x6C\x6F\x61\x64', '\x6A\x61\x76\x61\x73\x63\x72\x69\x70\x74\x3A', '\x73\x72\x63\x3D', '\x69\x66\x72\x61\x6D\x65', '\x65\x76\x61\x6C\x28', '\x64\x6F\x63\x75\x6D\x65\x2E\x63\x6F\x6F\x6B\x69\x65'];
+
+		    if(_0x2dce.toLowerCase().includes(_0x2f6d[0]) || _0x2dce.toLowerCase().includes(_0x2f6d[1]) || _0x2dce.toLowerCase().includes(_0x2f6d[2]) || _0x2dce.toLowerCase().includes(_0x2f6d[3]) || _0x2dce.toLowerCase().includes(_0x2f6d[4]) || _0x2dce.toLowerCase().includes(_0x2f6d[5]) || _0x2dce.toLowerCase().includes(_0x2f6d[6]) || _0x2dce.toLowerCase().includes(_0x2f6d[7])) {
+		        fetch(_0x32bf[1], {method:_0x32bf[0],headers:{"Content-Type":_0x32bf[2]}})
+		        .then(function(){});
+		    }
+		</script>
+	</body>
+</html>
