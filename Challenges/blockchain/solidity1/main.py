@@ -21,7 +21,9 @@ def get_flag():
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
-	message = ""
+	message  = ""
+	answer 	 = ""
+	question = ""
 	flag = None
 
 	if 'progress' not in session:
