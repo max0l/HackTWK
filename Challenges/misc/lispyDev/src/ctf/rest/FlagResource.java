@@ -14,7 +14,7 @@ public class FlagResource {
             return;
         }
 
-        if (flag.equals("CTFlisp{L4mbd4_C41cu1u5_15_Fun!}")) {
+        if (flag.equals("HackTWK{L4mbd4_C41cu1u5_15_Fun!}")) {
             context.getResponse().setCode(ResponseCodes.OK);
             context.getResponse().setBody("Correct flag!");
         } else {
