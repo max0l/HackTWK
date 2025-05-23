@@ -8,8 +8,9 @@ RUN apt-get update && apt-get install -y build-essential socat
 
 COPY main.c /app
 COPY Makefile /app
+COPY flag.txt /app
 
-RUN make private.elf
+RUN make program.elf
 
 RUN rm /app/main.c && rm /app/Makefile
 

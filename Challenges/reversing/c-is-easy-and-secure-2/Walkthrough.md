@@ -1,5 +1,9 @@
 # C is super easy and secure 2
 
+For this challenge to work as intended you need to extract the server binary from the docker container. You can do that with:
+
+`docker cp CONTAINER-NAME:/app/program.elf ./program.elf`
+
 ## Patching the Binary to use it with libc of the server
 
 You need a tool like [pwninit](https://github.com/io12/pwninit) to locally link the libc and the linker .so of the server.
@@ -218,3 +222,28 @@ p.interactive()
 ```
 
 After that, we will get RCE.
+
+## Closing
+
+Adding something like this to your python file:
+
+```python
+context.binary = binary = elf = ELF("./program_server.elf_patched")
+
+if len(sys.argv) > 1:
+    p = remote(sys.argv[1], int(sys.argv[2]))
+
+else:
+    context.terminal = ["konsole", "-e"]
+    p = process()
+
+# gdb.attach(p)
+```
+
+will make it easy for you to test it against the server after it is working locally. You can then run `python getRCE.py 127.0.0.1 8010` (replace the IP and Port with the acutal values).
+
+After executing the python code, you should get a shell. In the shell you can use cat to print out the flag.
+
+## The flag
+
+`HackTWK{1_H0P3_Y0U_134rN3D_50M37H1N6_480U7_C}`
