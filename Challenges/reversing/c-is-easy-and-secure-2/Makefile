@@ -4,16 +4,13 @@ RCE = -no-pie -O0 -fno-stack-protector
 
 SRC = main.c
 
-all: public.elf private.elf
+all: program.elf
 
-public.elf: $(SRC)
-	$(CC) -DPUBLIC_BUILD -g $(SRC) $(RCE) -o $@ $(STD)
-
-private.elf: $(SRC)
+program.elf: $(SRC)
 	$(CC) $(STD) $(RCE) -o $@ $(SRC) 
 
 clean:
-	rm -f public.elf private.elf
+	rm -f program.elf
 
 new:
 	make clean

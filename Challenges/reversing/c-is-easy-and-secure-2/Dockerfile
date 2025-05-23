@@ -23,4 +23,4 @@ RUN useradd app
 
 USER app
 
-ENTRYPOINT socat TCP-LISTEN:1337,reuseaddr,fork EXEC:/app/private.elf
+ENTRYPOINT ["socat", "TCP-LISTEN:1337,reuseaddr,fork", "EXEC:/app/program.elf"]

