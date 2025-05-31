@@ -19,6 +19,11 @@ services:
       context: "./Challenges/web/the_unzipper/"
     ports:
       - "8004:1337"
+  asimov:
+    build:
+      context: "./Challenges/web/asimov/"
+    ports:
+      - "8005:80"
   calculator:
     build:
       context: "./Challenges/web/calculator/"
