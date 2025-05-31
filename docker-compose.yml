@@ -14,12 +14,11 @@ services:
       context: "./Challenges/reversing/c-is-easy-and-secure/"
     ports:
       - "8002:1337"
-  ciseasyandsecuretwo:
+  the_unzipper:
     build:
-      context: "./Challenges/reversing/c-is-easy-and-secure-2/"
+      context: "./Challenges/web/the_unzipper/"
     ports:
-      - "8010:1337"
-
+      - "8004:1337"
   calculator:
     build:
       context: "./Challenges/web/calculator/"
@@ -35,3 +34,8 @@ services:
       context: "./Challenges/web/commandInjection/challenge2"
     ports:
       - "8008:5000"
+  ciseasyandsecuretwo:
+    build:
+      context: "./Challenges/reversing/c-is-easy-and-secure-2/"
+    ports:
+      - "8010:1337"
