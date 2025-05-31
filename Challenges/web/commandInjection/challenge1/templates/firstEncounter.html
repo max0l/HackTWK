@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+		<title>First Encounter</title>
+		<link rel="icon" type="image/x-icon" href="../media/hacktwk.webp">
+
+	</head>
+	<body>
+		<section>
+			<h1 class="PageTitle">Welcome to the First Challenge</h1>
+			<div id="contentBox">
+				<h1>Source Code</h1>
+				<img src="{{ url_for('static', filename='firstEncounter.png') }}">
+
+				<form id="inputForm" action="{{ url_for('firstEncounter') }}" method="GET">
+					<div>
+						<input type="text" id="param" name="param" placeholder="Try a command injection...">
+					</div>
+					<div>
+						<button type="submit">Submit</button>
+					</div>
+				</form>
+
+				<h3>Result</h3>
+				<p id="content">{{args}}</p>
+			</div>
+		</section>
+	</body>
+</html>
+

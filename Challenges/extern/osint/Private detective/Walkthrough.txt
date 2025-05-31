@@ -1,0 +1,10 @@
+1. Look for [3215 passport](https://www.google.com/search?client=firefox-b-d&q=3215+passport) which will reveal that it is probably a ukranian passport
+2. This gives to clue to convert the name "Artem Olegovich" to Cyrillics with e.g. [an Cyrillics online converter](https://convertcyrillic.com/#/) to "Артем Олегович"
+3. Searching this with the Passport number 3215 will give https://myrotvorets.center/criminal/varashev-artem-olehovych/ as a first result on google
+
+Flags: 
+
+CTFkom{Krasnoyarsk}
+CTFkom{Красноярск}
+CTFkom{Novokuznetsk}
+CTFkom{Новокузнецк}

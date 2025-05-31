@@ -2,7 +2,7 @@ FROM gcr.io/distroless/java21
 
 WORKDIR /app
 
-COPY out/artifacts/ctf_jar/ctf.jar /app/app.jar
+COPY build/lispyDev-1.2.1.jar /app/app.jar
 
 EXPOSE 4000
 
