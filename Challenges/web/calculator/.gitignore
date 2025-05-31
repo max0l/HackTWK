@@ -1,6 +1,7 @@
 ### IntelliJ IDEA ###
-build/
 out/
+.idea/
+build/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
