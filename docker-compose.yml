@@ -9,6 +9,11 @@ services:
       context: "./Challenges/misc/jwtJohn/"
     ports:
       - "8001:3000"
+  the_unzipper:
+    build:
+      context: "./Challenges/web/the_unzipper/"
+    ports:
+      - "8004:1337"
   calculator:
     build:
       context: "./Challenges/web/calculator/"
