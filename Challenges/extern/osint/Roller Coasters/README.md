@@ -8,3 +8,6 @@ orange roller coaster for me?
 
 *Flag format: CTFkom{Name of roller coaster}*
 
+__Author: CTFkom__
+
+## Points: 2

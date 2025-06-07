@@ -7,4 +7,10 @@ A sweep of regional radio channels was recorded in an attempt to catch any outgo
 
 Find and and decode the hikers message.
 
+File: recording.wav
+
 _Flag format: HACKTWK..._
+
+__Author: KlnSdr__
+
+## Points: 3
